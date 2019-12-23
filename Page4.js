@@ -6,6 +6,8 @@ import Constants from 'expo-constants';
 import { LinearGradient } from 'expo-linear-gradient';
 import { RadioButton } from 'react-native-paper';
 import Icons from 'react-native-vector-icons/MaterialIcons';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 import backAndroid, {
   hardwareBackPress,
   exitApp
@@ -89,10 +91,10 @@ height: '100%',
 
   p:{
 position: 'absolute',
-width: '100%',
-height: '42%',
-left: '10%',
-top: '63%',
+width: wp(100),
+
+left: wp(10),
+top: hp(52),
 fontSize:40,
 color: 'white',
 
@@ -100,16 +102,16 @@ color: 'white',
   
   p1:{
 position: 'absolute',
-width: '100%',
-height: '36%',
-top: '73%',
-left:'2%',
+width: wp(100),
+
+top: hp(60),
+
 fontSize:25,
 color: 'white',
   },
   logo:{
-    width:'100%', 
-    height:'60%',
+    width:wp(100), 
+    height:hp(50),
    
     
 
@@ -117,22 +119,25 @@ color: 'white',
 
   },
  
+  grb:{
+  
+    top: hp('35%'),
+      bottom: wp(7),
+      height: hp(8),
+      width:hp(30),
+      top:hp(20),
+      left:wp(15)
+      },
+      grb1:{
+  
+        top: wp('45%'),
+          bottom: wp(7),
+          width:hp(30),
+          height: hp(8),
+          top:hp(22),
+          left:wp(15)
 
-grb:{
-      
-      width:'30%',
-      height:'7%',
-top:'17%',
-left:'30%',
-
-},
-grb1:{
- 
-width:'30%',
-height:'7%',
-top:'20%',
-left:'30%',
-}
+        }
  
 });
 export default Page4;

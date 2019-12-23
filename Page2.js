@@ -6,6 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import Icons from 'react-native-vector-icons/MaterialIcons';
 
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 
 
@@ -52,7 +53,7 @@ if (!firebase.apps.length) {
  
 <View style={styles.div}>
  
-<Text style={styles.p}> Welcome </Text>
+
  <Text style={styles.paragraph1}> Name of website </Text>
             <TextInput style={styles.input1}  placeholder='http://www.somehate.com/somepage'  value={this.state.name} onChangeText={(value)=>this.setState({ name:value })}/>
             <Text style={styles.paragraph2}> URL of website </Text>
@@ -124,29 +125,22 @@ height: '100%',
 
          },
 
-        div: {
-  alignItems: 'center',
-  justifyContent: 'center',
-  position: 'absolute',
-  left: '5%',
-  right: '5%',
-  top:'5%',
-  borderRadius: 30,
-  width:'90%',
-  height:'93%',
-  backgroundColor: 'rgba(238, 247, 245, 0.94)',
-  
- 
-  },
-  p:{
-    position: 'absolute',
-    width: '100%',
-    height: '42%',
-    left: '5%',
-    top: '5%',
-    fontSize:35,
-    color: '#3FE8C9',
-      },
+         div: {
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'absolute',
+          left: wp(5),
+        right: wp(5),
+          top:wp(5),
+          bottom:wp(5),
+          borderRadius: 30,
+          width: wp(90),
+          height:hp(75),
+          top:hp(12),
+        
+          backgroundColor: 'rgba(238, 247, 245, 0.94)',
+          },
+
       grb:{
         position: 'absolute',
         top: '85%',
@@ -155,8 +149,8 @@ height: '100%',
  paragraph1: {
     position: 'absolute',
     color: '#3FE8C9',
-    left:'10%',
-    top:'20%',
+    left:hp(5),
+    top:hp(5),
 
  
   
@@ -165,25 +159,25 @@ height: '100%',
    paragraph2: {
      position: 'absolute',
     color: '#3FE8C9',
-    left:'10%',
-    top:'34%',
+    left: hp (5),
+    top:hp(15),
   
   
   },
    paragraph3: {
      position: 'absolute',
     color: '#3FE8C9',
-    left:'10%',
-    top:'50%',
+    left:hp(5),
+    top:hp(30),
   
   
   },
 input1: {
    position: 'absolute',
     textAlign: 'center',
-    width:'70%',
-    height: '7%',
-   top:'25%',
+    width:wp(70),
+  
+   top:hp(10),
     backgroundColor: '#FFFFFF',
     
     
@@ -191,20 +185,25 @@ input1: {
   input2: {
      position: 'absolute',
     textAlign: 'center',
-    width:'70%',
-    height: '7%',
-    top:'38%',
+    width:wp(70),
+ 
+    top:hp(20),
  
     backgroundColor: '#FFFFFF',
   },
   pk2:{
      borderWidth: 30,
     borderColor: '#9E9E9E',
-    width:'70%',
-    top:'10%',
+    width:wp(70),
+    top:hp(5)
 
   },
 
+    grb:{
+  
+      top: hp('25%'),
+        bottom: wp(7)
+        }
  
 });
 export default Page2;

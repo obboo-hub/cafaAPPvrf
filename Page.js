@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, TextInput, View, StyleSheet, Button, Image,ImageBackground,Picker,TouchableOpacity
   } from 'react-native'; 
+  import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import GradientButton from 'react-native-gradient-buttons';
 import Constants from 'expo-constants';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -65,32 +66,30 @@ height: '100%',
 
          },
 
-  p:{
-position: 'absolute',
-width: '100%',
-height: '70%',
-left: '1%',
-top: '70%',
-fontSize:35,
-color: 'white',
-
-  },
+         p:{
+          position: 'absolute',
+          width: wp(100),
+          
+          left: hp(2),
+          top:hp(60),
+          fontSize:35,
+          color: 'white',
+          
+            },
   logo:{
-    width:'100%', 
-    height:'60%',
-
+    position: 'absolute',
+    width:wp(100),
+    height:hp(60)
 
   },
 
   grb:{
+    top: hp(80),
+  bottom: hp(20),
+  
 
-    top:'27%',
-    width:'50%',
-    height:'8%',
-    left:'20%',
-    
-    
-    },
+
+      },
 
  
 });

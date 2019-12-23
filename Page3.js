@@ -3,6 +3,8 @@ import { Text, TextInput, View, StyleSheet, Button, Image,ImageBackground,Picker
 import GradientButton from 'react-native-gradient-buttons';
 import Constants from 'expo-constants';
 import { LinearGradient } from 'expo-linear-gradient';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 
 import * as firebase from 'firebase';
 import Icons from 'react-native-vector-icons/MaterialIcons';
@@ -52,7 +54,7 @@ state={
     <Icons name={'arrow-back'} size={30} color='#fff'  style={{marginLeft: '3%'}} />
 </TouchableOpacity>
 <View style={styles.div}>
-<Text style={styles.p}> Welcome </Text>
+
  <Text style={styles.paragraph1}> Hate snaps  </Text>
             <TextInput style={styles.input1}  placeholder='Lorem ipsum dolor sit amet consectetur adipiscing elit.In vulputate sociis ullamcorper faucibus cursus libero posuere.Ullamcorper quam cursus duis facilisis ipsum enim, viverra pretium egestas.Nec, metus quis arcu aliquam lorem. Nascetur gravida metus,id duis tincidunt.' value={this.state.description} onChangeText={(value)=>this.setState({ description:value })}/>
         
@@ -130,54 +132,43 @@ height: '100%',
 
          },
 
-         p:{
-          position: 'absolute',
-          width: '100%',
-          height: '42%',
-          left: '5%',
-          top: '5%',
-          fontSize:35,
-          color: '#3FE8C9',
-            },
-  grb:{
-
-    top:'8%',
-    width:'50%',
-    height:'8%',
-    
-    
-    
-    },
+      
+            grb:{
+  
+              top: hp('6%'),
+                bottom: wp(7)
+                },
  
  paragraph1: {
     color: '#3FE8C9',
     fontSize:30,
-    top:'4%',
+    top:hp(1),
  
   
   
  },
 input1: {
     textAlign: 'center',
-    width:'80%',
-    height: '65%',
+    width:wp(70),
+    height: hp(45),
     borderRadius: 5,
-    top:'5%',
+    top:hp(4),
    
     backgroundColor: '#FFFFFF',
     
-    },  div: {
+    },     div: {
       alignItems: 'center',
       justifyContent: 'center',
       position: 'absolute',
-      left: '5%',
-      right: '5%',
-      top:'5%',
+      left: wp(5),
+    right: wp(5),
+      top:wp(5),
+      bottom:wp(5),
       borderRadius: 30,
-      width:'90%',
-      height:'93%',
+      width: wp(90),
+      height:hp(75),
+      top:hp(12),
+    
       backgroundColor: 'rgba(238, 247, 245, 0.94)',
-      
-     
       },
 });
